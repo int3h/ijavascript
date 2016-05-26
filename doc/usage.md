@@ -8,13 +8,13 @@ ijs
 
 This command will open the Jupyter dashboard in your default web browser:
 
-![Screenshot: IPython Notebook
+![Screenshot: Jupyter Notebook
 Dashboard](../images/screenshot-dashboard-home.png)
 
 ## Register IJavascript with the dashboard
 
-The IJavascript kernel can be registered with Jupyter (and IPython v3) without
-opening the dashboard. To register the kernel for all users, run:
+The IJavascript kernel can be registered with Jupyter without opening the
+dashboard. To register the kernel for all users, run:
 
 ```sh
 ijs --ijs-install=global
@@ -30,32 +30,31 @@ ijs --ijs-install=local
 
 By default, the dashboard lists the notebooks in the current working folder. The
 flag `--notebook-dir=path/to/another/folder` can be used to open the dashboard
-at a different folder:
+in a different folder:
 
 ```sh
 ijs --notebook-dir=path/to/another/folder
 ```
 
-![Screenshot: IPython Notebook
+![Screenshot: Jupyter Notebook
 --notebook-dir](../images/screenshot-dashboard-dir.png)
 
 ## Set the kernel working folder
 
-Also by default, the IJavascript kernel runs a `node.js` session in the current
+The IJavascript kernel, also by default, runs a `Node.js` session in the current
 working folder. The flag `--ijs-working-dir=path/to/another/folder` can be used
-to run the `node.js` session at a different folder.
+to run the `Node.js` session in a different folder.
 
-![Screenshot: IPython Notebook
+![Screenshot: Jupyter Notebook
 --ijs_working-dir](../images/screenshot-notebook-dir.png)
 
 ## Run startup scripts
 
 It is possible to run one or more scripts at the startup of an IJavascript
-session. This can be useful to preload an `npm` package (e.g.
-[d3](https://www.npmjs.com/package/d3)) or a [custom
-`$$mimer$$`](http://n-riesco.github.io/ijavascript/doc/mimer.ipynb.html).
+session. This can be useful to preload `npm` packages (e.g.
+[d3](https://www.npmjs.com/package/d3)).
 
-To preload a script:
+To preload a script, use the flag `--ijs-startup-script=path/to-script.js`:
 
 ```sh
 ijs --ijs-startup-script=path/to/script.js
@@ -63,7 +62,7 @@ ijs --ijs-startup-script=path/to/script.js
 
 For convenience, it is also possible to preload all the Javascript files in a
 folder. The execution order is determined by the alphabetical order of their
-filenames; for example: `50-package-d3.js`, `60-mimer-d3.js`.
+filenames; for example: `50-d3.js` before `60-d3-ijavascript-wrapper.js`.
 
 ```sh
 ijs --ijs-startup-script=path/to/folder
