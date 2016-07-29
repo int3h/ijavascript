@@ -39,6 +39,8 @@
         "lint": "jshint bin lib",
         "test": "npm run lint && npm run test:4 && npm run test:5",
         "test:4": "node test/index.js --protocol=4.1",
-        "test:5": "node test/index.js --protocol=5.0"
+        "test:5": "node test/index.js --protocol=5.0",
+        "test:node-0.10": "docker build -t test-ijavascript-node-0.10 -f test/ijavascript-node-0.10/Dockerfile . && docker run test-ijavascript-node-0.10",
+        "test:node-latest": "docker build -t test-ijavascript-node-latest -f test/ijavascript-node-latest/Dockerfile . && docker run test-ijavascript-node-latest"
     }
 }
